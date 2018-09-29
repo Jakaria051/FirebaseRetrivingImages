@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-       ///send query to firebase database
+    
         mFireBaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mFireBaseDatabase.getReference("Data");
 
     }
 
-    //serach
+
 
     private void firebaseSearch(String searchText)
     {
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        ///inflate the manu ; this adds items to the action bar if it is present
+      
 
         getMenuInflater().inflate(R.menu.manu,menu);
         MenuItem item = menu.findItem(R.id.action_search);
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
 
-                //filter as you type
+              
                 firebaseSearch(newText);
                 return false;
             }
