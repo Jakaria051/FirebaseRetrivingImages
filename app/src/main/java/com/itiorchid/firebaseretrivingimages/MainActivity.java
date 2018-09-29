@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 firebaseSearch(query);
+                
                 return false;
             }
 
