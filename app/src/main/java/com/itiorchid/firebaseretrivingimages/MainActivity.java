@@ -45,25 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void firebaseSearch(String searchText)
-    {
-        Query firebaseSearchQuery = mDatabaseReference.orderByChild("title").startAt(searchText).endAt(searchText  + "\uf8ff");
-
-        FirebaseRecyclerAdapter <ModeIClass,ViewHolder> firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<ModeIClass, ViewHolder>(
-                        ModeIClass.class,
-                        R.layout.raw,
-                        ViewHolder.class,
-                        firebaseSearchQuery) {
-                    @Override
-                    protected void populateViewHolder(ViewHolder viewHolder, ModeIClass model, int position) {
-
-                        viewHolder.details_Informations(getApplicationContext(),model.getTitle(),model.getDescription(),model.getImage());
-                    }
-                };
-        mRecyclerView.setAdapter(firebaseRecyclerAdapter);
-    }
-
 
 
     @Override
